@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "561908997057",
+    "firebase_url": "https://iforget.firebaseio.com",
+    "project_id": "iforget",
+    "storage_bucket": "iforget.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:561908997057:android:f298bb0e6e19c364",
+        "android_client_info": {
+          "package_name": "com.cmjx.iforget"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "561908997057-61of5ukf4ihndr79jn582jgg2i69isf7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD07K-y0ZB5RgG9A6KlRjby5CUUFb_KCwc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "561908997057-61of5ukf4ihndr79jn582jgg2i69isf7.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "561908997057-5papifm0lhjk3lfvaq3hbnbpf2q5cpe6.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.cmjx.iforget"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
