@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class ResetPasswordScreen extends StatefulWidget {
-  static const String routeName = "/home";
+  static const String routeName = '/reset-password';
 
   ResetPasswordScreen();
 

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:my_app/src/login.dart';
+import 'package:my_app/src/sign_in.dart';
 
 class ProfileScreen extends StatefulWidget {
   ProfileScreen();
@@ -18,9 +20,23 @@ class _ProfileScreenState extends State<ProfileScreen> {
         title: Text('Perfil'),
       ),
       body: Container(
-        child: Center(
-          child: Text('Esto es un Texto'),
-        ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisSize: MainAxisSize.max,
+          children: <Widget>[
+            Center(
+              child: RaisedButton(
+                textTheme: ButtonTextTheme.primary,
+                child: Text('Sign Out'),
+                onPressed: () {
+                  signOutGoogle();
+                  Navigator.of(context).pushAndRemoveUntil(MaterialPageRoute(builder: (context) {return LoginScreen();}), ModalRoute.withName('/'));
+                },
+              ),
+            )
+
+          ],
+        )
       )
     );
   }

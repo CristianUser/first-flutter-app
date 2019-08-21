@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:my_app/src/sign_in.dart';
 
-class HomeScreen extends StatefulWidget {
-  static const String routeName = "/home";
+class TodoScreen extends StatefulWidget {
+  static const String routeName = "/todos";
 
-  HomeScreen();
+  TodoScreen();
 
   @override
-  _HomeScreenState createState() => _HomeScreenState();
+  _TodoScreenState createState() => _TodoScreenState();
 }
 
 
-class _HomeScreenState extends State<HomeScreen> {
+class _TodoScreenState extends State<TodoScreen> {
   
   @override
   // TODO: implement widget
@@ -55,7 +55,7 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
       ),
       appBar: AppBar(
-        title: Text('Inicio'),
+        title: Text('Tareas'),
       ),
       body: Container(
         child: Center(

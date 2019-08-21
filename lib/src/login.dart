@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:my_app/src/home.dart';
+import 'package:my_app/src/sign_in.dart';
 
 class LoginScreen extends StatefulWidget {
   static const String routeName = "/home";
@@ -88,22 +90,49 @@ class _LoginScreenState extends State<LoginScreen> {
                                 ],
                               ),
                             ),
-                            Padding(
-                              padding: const EdgeInsets.symmetric(vertical: 16.0),
-                              child: Center (
-                                child: RaisedButton(
-                                  color: Colors.blue,
-                                  onPressed: () {
-                                    // Validate will return true if the form is valid, or false if
-                                    // the form is invalid.
-                                    if (_formKey.currentState.validate()) {
-                                      // Process data.
-                                    }
-                                  },
-                                  child: Text('Sign in', style: TextStyle(color: Colors.white),),
+                            Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              mainAxisSize: MainAxisSize.max,
+                              children: <Widget>[
+                                Padding(
+                                  padding: const EdgeInsets.fromLTRB(0, 10, 0, 0),
+                                  child: Center (
+                                    child: RaisedButton(
+                                      color: Colors.blue,
+                                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(40)),
+                                      onPressed: () {
+                                        // Validate will return true if the form is valid, or false if
+                                        // the form is invalid.
+                                        if (_formKey.currentState.validate()) {
+                                          // Process data.
+                                        }
+                                      },
+                                      child: Text('Sign in', style: TextStyle(color: Colors.white),),
+                                    ),
+                                  )
                                 ),
-                              )
-                            ),
+                                FlatButton(
+                                  color: Colors.transparent,
+                                  textColor: Colors.blue,
+                                  disabledColor: Colors.grey,
+                                  disabledTextColor: Colors.black,
+                                  padding: EdgeInsets.all(0.0),
+                                  splashColor: Colors.blueAccent,
+                                  onPressed: () {
+                                    /*...*/
+                                  },
+                                  child: Text(
+                                    'Register',
+                                    style: TextStyle(fontSize: 15.0),
+                                  ),
+                                ),
+                                Padding(
+                                  padding: EdgeInsets.fromLTRB(0, 0, 0, 10),
+                                  child: Text('or'),
+                                ),
+                                _signInButton()
+                              ],
+                            )
                           ],
                         ),
                       )
@@ -116,4 +145,44 @@ class _LoginScreenState extends State<LoginScreen> {
         ],
       )
     );
+
+  Widget _signInButton() {
+    return OutlineButton(
+      splashColor: Colors.grey,
+      onPressed: () {
+        signInWithGoogle().whenComplete(() {
+          // Navigator.of(context).push(
+          //   MaterialPageRoute(
+          //     builder: (context) {
+          //       return HomeScreen();
+          //     },
+          //   ),
+          // );
+        });
+      },
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(40)),
+      highlightElevation: 0,
+      borderSide: BorderSide(color: Colors.grey),
+      child: Padding(
+        padding: const EdgeInsets.fromLTRB(0, 10, 0, 10),
+        child: Row(
+          mainAxisSize: MainAxisSize.min,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Image(image: AssetImage("assets/google_logo.png"), height: 20.0),
+            Padding(
+              padding: const EdgeInsets.only(left: 10),
+              child: Text(
+                'Sign in with Google',
+                style: TextStyle(
+                  fontSize: 12,
+                  color: Colors.grey,
+                ),
+              ),
+            )
+          ],
+        ),
+      ),
+    );
+  }
 }
